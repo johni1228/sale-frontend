@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.1.9",
     "tailwind": "^4.0.0"
   }
 }
