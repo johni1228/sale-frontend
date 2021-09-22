@@ -1,9 +1,15 @@
 import React from 'react'
 
+import Layout from 'Layout'
+
 const Marketplace: React.FC = () => {
   return (
     <>
-      Marketplace
+      <Layout>
+        <div>
+          Marketplace
+        </div>
+      </Layout>
     </>
   )
 }

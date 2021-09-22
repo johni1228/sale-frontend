@@ -1,9 +1,15 @@
 import React from 'react'
 
+import Layout from 'Layout';
+
 const Mint: React.FC = () => {
   return (
     <>
-      Mint
+      <Layout>
+        <div>
+          Mint
+        </div>
+      </Layout>
     </>
   )
 }

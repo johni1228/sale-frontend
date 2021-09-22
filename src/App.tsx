@@ -1,7 +1,6 @@
 import React, { lazy } from 'react';
 import { Router, Switch, Route } from 'react-router-dom' 
 
-import './index.scss'
 import history from './routerHistory'
 
 const Home = lazy(() => import('./pages/Home'));

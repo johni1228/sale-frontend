@@ -1,9 +1,15 @@
 import React from 'react'
 
+import Layout from 'Layout'
+
 const MintedNFTs: React.FC = () => {
   return (
     <>
-      MintedNFTs
+      <Layout>
+        <div>
+          MintedNFTs
+        </div>
+      </Layout>
     </>
   )
 }

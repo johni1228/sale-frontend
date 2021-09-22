@@ -1,12 +1,17 @@
 import React from "react";
 
-const Layout = (props: any) => {
+import Navbar from 'components/nav'
+import Siderbar from 'components/siderbar'
+
+const Layout: React.FC = ({ children }) => {
   return (
     <>
       <div>
-        Layout
+        <Navbar />
+        <Siderbar />
+        { children }
       </div>
-      {...props}
+
     </>
   )
 }
