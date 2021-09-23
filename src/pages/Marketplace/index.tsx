@@ -1,15 +1,12 @@
 import React from 'react'
-
-import Layout from 'Layout'
+import NFTCard from 'components/NFTCard'
 
 const Marketplace: React.FC = () => {
   return (
     <>
-      <Layout>
-        <div>
-          Marketplace
-        </div>
-      </Layout>
+      <div className="p-30 text-center flex-grow">
+        <NFTCard />
+      </div>
     </>
   )
 }

@@ -2,6 +2,7 @@ import React, { lazy } from 'react';
 import { Router, Switch, Route } from 'react-router-dom' 
 
 import history from './routerHistory'
+import Layout from 'Layout'
 
 const Home = lazy(() => import('./pages/Home'));
 const Mint = lazy(() => import('./pages/Mint'));
@@ -12,23 +13,25 @@ const Marketplace = lazy(() => import('./pages/Marketplace'));
 const App : React.FC = () => {
   return (
     <Router history={history}>
-      <Switch>
-        <Route path='/' exact>
-          <Home />
-        </Route>
-        <Route path='/mint' exact>
-          <Mint />
-        </Route>
-        <Route path='/myNFTs' exact>
-          <MyNFTs />
-        </Route>
-        <Route path='/mintedNFTs' exact>
-          <MintedNFTs />
-        </Route>
-        <Route path='/marketplace' exact>
-          <Marketplace />
-        </Route>
-      </Switch>
+      <Layout>
+        <Switch>
+          <Route path='/' exact>
+            <Home />
+          </Route>
+          <Route path='/mint' exact>
+            <Mint />
+          </Route>
+          <Route path='/myNFTs' exact>
+            <MyNFTs />
+          </Route>
+          <Route path='/mintedNFTs' exact>
+            <MintedNFTs />
+          </Route>
+          <Route path='/marketplace' exact>
+            <Marketplace />
+          </Route>
+        </Switch>
+      </Layout>
     </Router>
   );
 }
