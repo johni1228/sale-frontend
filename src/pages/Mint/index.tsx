@@ -1,6 +1,5 @@
 import React from 'react'
 import Ques from 'assets/images/question.png'
-import Layout from 'Layout';
 
 const Mint: React.FC = () => {
   return (
