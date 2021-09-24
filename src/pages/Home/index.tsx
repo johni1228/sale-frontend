@@ -24,10 +24,10 @@ const Home: React.FC = () => {
     };
   })
   return (
-      <div className="flex flex-row items-center justify-between bg-green-200 px-20 flex-grow">
+      <div className="flex sm:flex-row msm:flex-col items-center sm:justify-between msm:justify-around bg-green-200 px-20 flex-grow">
         <div className="flex flex-col items-center text-20">
-          <h1 className="text-80 font-extrabold mb-50">Harmony NFTs</h1>
-          <div>
+          <h1 className="lg:text-80 md:text-60 sm:text-40 msm:text-40 font-extrabold mb-50 text-center">Harmony NFTs</h1>
+          <div className="msm:hidden sm:block">
             <p>Harmony NFTs is a collection of 10,000 randomly generated harmony NFTs on the Kadena blockchain.</p>
             <p>
               Our harmonies are pudgy, cute, fun, and a little goofy. </p>

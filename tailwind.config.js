@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors')
+const plugin = require('tailwindcss/plugin')
 
 function range(start, end, increment = 1) {
   const count = Math.floor((end - start + 1) / increment);
@@ -18,6 +19,12 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
+      // xlsm: '375px',xsm: '425px',lap: '890px',lapL: '1230px',
+
+      'mlg': '425px',
+      'mmd': '375px',
+      'msm': '320px',
+      'lap': '890px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
