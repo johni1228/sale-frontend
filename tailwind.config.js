@@ -21,9 +21,9 @@ module.exports = {
     screens: {
       // xlsm: '375px',xsm: '425px',lap: '890px',lapL: '1230px',
 
-      'mlg': '425px',
-      'mmd': '375px',
       'msm': '320px',
+      'mmd': '375px',
+      'mlg': '425px',
       'lap': '890px',
       sm: '640px',
       md: '768px',
