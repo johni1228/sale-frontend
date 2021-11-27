@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import { faWindowRestore } from '@fortawesome/free-solid-svg-icons'
+import React, { useState, useEffect, ElementType, ComponentProps} from 'react'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Home: React.FC = () => {
 
-  interface ButtonPros {
+  const history = useHistory()
+
+  interface ButtonPros extends ComponentProps<"button">{
     title: string;
   }
 
@@ -29,6 +33,7 @@ const Home: React.FC = () => {
     color: black;
   `
   const Stylediv = styled.div`
+    cursor: pointer;
     width: 224px;
     height: 56px;
     color: #806100;
@@ -36,7 +41,7 @@ const Home: React.FC = () => {
     font-weight: 400;
   `
 
-  const Button = ({title}: ButtonPros) => {
+  const Button =({title}: ButtonPros): JSX.Element => {
     return (
       <Stylediv className="bg-white text-center w-224 h-56">
         {title}
@@ -71,13 +76,16 @@ const Home: React.FC = () => {
     )
   }
 
+  const handle = (title: string) => {
+    return history.push(title)
+  }
 
   return (
       <Wrapper className="flex flex-col pt-100 px-200">
         <HomeHeader>The Defi LaunchedPad made for the people!</HomeHeader>
         <Description className="mt-16 mb-30">4Sale is an easy to use launchpad, making it democratic and accessible for everyone to create, participate and research PreSales of tokens</Description>
         <div className="flex justify-around">
-          <Button title={'Create Sale'}/>
+          <Button title={'Create Sale'} onClick={()=> {window.alert("adsf")}} />
           <Button title={'Pre Sales'}/>
           <Button title={'Docs'}/>
         </div>
