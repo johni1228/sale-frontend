@@ -4,7 +4,6 @@ import { space, layout, variant } from 'styled-system'
 import { colorVariants } from './theme'
 import { PageProps } from './type'
 
-
 const StyleDiv = styled.div<PageProps>`
   border-top-width: 40px;
   border-right-width: 45px;
@@ -18,7 +17,6 @@ const StyleDiv = styled.div<PageProps>`
     variants: colorVariants
   })}
 `
-
 
 export const Page = (props: PageProps) => {
   const { children, color,  ...rest} = props;

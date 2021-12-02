@@ -8,6 +8,7 @@ export { default as TelegramIcon } from "./Icons/TelegramIcon";
 export { default as TwitterIcon } from "./Icons/TwitterIcon";
 export { default as DocsIcon } from "./Icons/DocsIcon";
 export { default as Logo } from "./Icons/Logo";
+export { default as SaleIcon } from "./Icons/SaleIcon";
 export { default as TextLogo } from "./Icons/TextLogo";
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./type";
