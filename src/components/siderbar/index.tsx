@@ -60,11 +60,11 @@ const Siderbar = ({list, showMenu, setShowMenu}: Props) => {
             if(item.items)
               return(<div>
                 <div 
-                  className={"text-gray-600 py-10 px-20 cursor-pointer flex justify-between items-center hover:text-gray-900"} 
+                  className={"text-black py-10 px-20 cursor-pointer flex justify-between items-center hover:text-gray-900"} 
                   onClick={() => handleSub(index)}>
                   <div className="flex justify-start items-center">
-                    <Icon />
-                    { showMenu && <Link to="" className={showMenu?"m-10 text-20 font-bold":"text-20 font-bold"}>{showMenu?item.label: ''}</Link>}
+                    <Icon fontSize="15px"/>
+                    { showMenu && <Link to="" className={showMenu?"m-10 text-18":"text-18"}>{showMenu?item.label: ''}</Link>}
                   </div>
                   {showMenu && (isPushed[index] ? <ArrowDownIcon /> : <ArrowUpIcon /> )}
                 </div>
@@ -72,11 +72,11 @@ const Siderbar = ({list, showMenu, setShowMenu}: Props) => {
               </div>)
             else return (
               <div 
-                  className={"text-gray-600 py-10 px-20 cursor-pointer flex justify-between items-center hover:text-gray-900"} 
+                  className={"text-black py-10 px-20 cursor-pointer flex justify-between items-center hover:text-gray-900"} 
                   onClick={() => {handleLink(item)}}>
                   <div className="flex justify-start items-center">
                     <Icon />
-                    { showMenu && <Link to="" className={showMenu?"m-10 text-20 font-bold":"text-20 font-bold"}>{showMenu?item.label: ''}</Link>}
+                    { showMenu && <Link to="" className={showMenu?"m-10 text-18":"text-18"}>{showMenu?item.label: ''}</Link>}
                   </div>
               </div>
             )

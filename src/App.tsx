@@ -3,33 +3,27 @@ import { Router, Switch, Route } from 'react-router-dom'
 
 import history from './routerHistory'
 import Layout from 'Layout'
+import { RedirectLaunchpad } from 'pages/Launpad/redirect';
 
 const Home = lazy(() => import('./pages/Home'));
-const Mint = lazy(() => import('./pages/Mint'));
-const MyNFTs = lazy(() => import('./pages/MyNFTs'));
-const MintedNFTs = lazy(() => import('./pages/MintedNFTs'));
-const Marketplace = lazy(() => import('./pages/Marketplace'));
+const CreateSale = lazy(()=> import('./pages/CreateSale/index'))
+const PreSale = lazy(()=> import('./pages/PreSale/index'))
+const Tokens = lazy(() => import('./pages/Tokens'))
+const Liquidity = lazy(() => import ('./pages/Liquidity'))
+const LockerCreate = lazy(() => import ('./pages/LockerCreate'))
 
 const App : React.FC = () => {
   return (
     <Router history={history}>
       <Layout>
         <Switch>
-          <Route path='/' exact>
-            <Home />
-          </Route>
-          <Route path='/mint' exact>
-            <Mint />
-          </Route>
-          <Route path='/myNFTs' exact>
-            <MyNFTs />
-          </Route>
-          <Route path='/mintedNFTs' exact>
-            <MintedNFTs />
-          </Route>
-          <Route path='/marketplace' exact>
-            <Marketplace />
-          </Route>
+          <Route path='/' exact component={Home} />
+          <Route path='/launchpad:subItem' exact component={RedirectLaunchpad} />
+          <Route path='/launchpad/preSale' exact component={PreSale} /> 
+          <Route path='/launchpad/createSale' exact component={CreateSale} /> 
+          <Route path='/lock/tokens' exact component={Tokens} /> 
+          <Route path='/lock/liquidity' exact component={Liquidity} />
+          <Route path='/lock/createLocker' exact component={LockerCreate} />
         </Switch>
       </Layout>
     </Router>

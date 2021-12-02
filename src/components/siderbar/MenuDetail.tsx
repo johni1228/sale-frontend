@@ -29,7 +29,7 @@ export const MenuDetail = ({detail, href}: Props) => {
   return (
     <Stylediv>
       { detail.map((item) => (
-        <div onClick={() => handle(item.href, parentHref)} className="px-10 py-10 font-bold text-20 text-center text-gray-600 cursor-pointer hover:text-gray-900">
+        <div onClick={() => handle(item.href, parentHref)} className="px-10 py-10 font-bold text-15 text-center text-gray-600 cursor-pointer hover:text-gray-900">
           {item.label}
         </div>
       ))}
