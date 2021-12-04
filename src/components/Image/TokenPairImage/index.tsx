@@ -18,8 +18,8 @@ export const TokenPairImage = ({firstToken, secondToken, ...props}: TokenPairIma
   
   return (
     <Stylediv firstToken={firstToken} secondToken={secondToken}>
-      <div className="z-20 relative"><img src={tokens[firstToken.symbol.toLowerCase()]?.src} alt={`${firstToken.name} image`} width="64px" height="64px"/>
-        <div className="z-10 absolute top-40 left-30"><img src={tokens[secondToken.symbol.toLowerCase()]?.src} alt={`${secondToken.name} image`} width="60px" height="60px"/></div>
+      <div className="z-0 relative"><img src={tokens[firstToken.symbol.toLowerCase()]?.src} alt={`${firstToken.name} image`} width="64px" height="64px"/>
+        <div className="z-0 absolute top-40 left-30"><img src={tokens[secondToken.symbol.toLowerCase()]?.src} alt={`${secondToken.name} image`} width="60px" height="60px"/></div>
       </div>
     </Stylediv>
   )

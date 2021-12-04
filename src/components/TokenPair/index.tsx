@@ -10,37 +10,17 @@ export interface TokenPairProps {
 export const TokenPair = ({firstToken, secondToken}: TokenPairProps) => {
   
   return (<>
-    <div className="flex justify-between items-center mb-20 border-b-2 pb-20">
-      <div className="flex items-center">
-        <TokenPairImage firstToken={firstToken} secondToken={secondToken} />
+    <div className="pb-10 border-b-2 mb-10 flex msm:flex-col sm:grid sm:grid-cols-3 sm:items-center">
+      <div className="flex justify-start items-center flex-grow-0 msm:mb-20">
+        <TokenPairImage firstToken={firstToken} secondToken={secondToken} min-width={20} min-height={20}/>
         <p className="ml-20">{firstToken.symbol} / {secondToken.symbol}</p>
       </div>
-      <div className="">10000000000</div>
-      <div>View</div>
-    </div>
-    <div className="flex justify-between items-center mb-20 border-b-2 pb-20">
-      <div className="flex items-center">
-        <TokenPairImage firstToken={firstToken} secondToken={secondToken} />
-        <p className="ml-20">{firstToken.symbol} / {secondToken.symbol}</p>
+      <p className="msm:hidden sm:flex justify-center">1000000 BNB</p>
+      <p className="msm:hidden sm:flex cursor-pointer justify-end">view</p>
+      <div className="msm:flex msm:justify-between msm:flex-grow sm:hidden">
+        <p className="flex justify-start">10000000 BNB</p>
+        <p className="cursor-pointer flex justify-end">view</p>
       </div>
-      <div>10000000000</div>
-      <div>View</div>
-    </div>
-    <div className="flex justify-between items-center mb-20 border-b-2 pb-20">
-      <div className="flex items-center">
-        <TokenPairImage firstToken={firstToken} secondToken={secondToken} />
-        <p className="ml-20">{firstToken.symbol} / {secondToken.symbol}</p>
-      </div>
-      <div>10000000000</div>
-      <div>View</div>
-    </div>
-    <div className="flex justify-between items-center mb-20 border-b-2 pb-20">
-      <div className="flex items-center">
-        <TokenPairImage firstToken={firstToken} secondToken={secondToken} />
-        <p className="ml-20">{firstToken.symbol} / {secondToken.symbol}</p>
-      </div>
-      <div>10000000000</div>
-      <div>View</div>
     </div>
   </>)
 }
