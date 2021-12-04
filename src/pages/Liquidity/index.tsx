@@ -46,8 +46,8 @@ const Liquidity = () => {
       <SearchBar className="flex msm:flex-col md:flex-row md:items-center justify-around md:mb-100 msm:mb-50 min-h-full">
           <div className="msm:min-w-min md:w-700 sm:mb-10 msm:mb-5"><input type="text" name="searchbar" id="searchbar" placeholder="Search by token address" className="outline-none p-10 border-2 w-full rounded-xl border-gray-900"/></div>
           <div className="flex msm:justify-between md:justify-around items-center flex-grow">
-            <Text onClick={() => setAll(true)} className="msm:w-80 md:120">All</Text>
-            <Text onClick={() => setAll(false)} className="msm:w-80 md:120">My Lock</Text>
+            <Text onClick={() => setAll(true)} className="msm:w-80 md:120 hover:bg-red-100 hover:text-red-400">All</Text>
+            <Text onClick={() => setAll(false)} className="msm:w-80 md:120 hover:bg-red-100 hover:text-red-400">My Lock</Text>
           </div>
       </SearchBar>
       <CurrenciesHeader className="msm:hidden sm:grid grid grid-cols-3 text-center mb-30">
