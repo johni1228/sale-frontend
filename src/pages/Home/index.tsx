@@ -1,4 +1,5 @@
 import { faWindowRestore } from '@fortawesome/free-solid-svg-icons'
+import { Page } from 'components/Page'
 import React, { useState, useEffect, ElementType, ComponentProps} from 'react'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
@@ -31,6 +32,7 @@ const Home: React.FC = () => {
   const Wrapper = styled.div`
     background-color: #f0f0f0;
     color: black;
+    padding: 100px, 200px, 0px, 200px;
   `
   const Stylediv = styled.div`
     cursor: pointer;
@@ -43,7 +45,7 @@ const Home: React.FC = () => {
 
   const Button =({title}: ButtonPros): JSX.Element => {
     return (
-      <Stylediv className="bg-white text-center w-224 h-56">
+      <Stylediv className="bg-white text-center w-224 h-56 mb-10">
         {title}
       </Stylediv>
     )
@@ -69,7 +71,7 @@ const Home: React.FC = () => {
   const Card = ({title, description}: CardProps) => {
 
     return (
-      <CardWrapper className="flex flex-col items-center">
+      <CardWrapper className="flex flex-col items-center mb-10">
         <CardTitie>{title}</CardTitie>
         <CardDesription>{description}</CardDesription>
       </CardWrapper>
@@ -81,15 +83,15 @@ const Home: React.FC = () => {
   }
 
   return (
-      <Wrapper className="flex flex-col pt-100 px-200">
-        <HomeHeader>The Defi LaunchedPad made for the people!</HomeHeader>
-        <Description className="mt-16 mb-30">4Sale is an easy to use launchpad, making it democratic and accessible for everyone to create, participate and research PreSales of tokens</Description>
-        <div className="flex justify-around">
+      <Wrapper className="flex flex-col sm:flex-grow w-full p-40 min-h-full">
+        <HomeHeader className="msm:hidden sm:block">The Defi LaunchedPad made for the people!</HomeHeader>
+        <Description className="mt-16 msm:hidden sm:block">4Sale is an easy to use launchpad, making it democratic and accessible for everyone to create, participate and research PreSales of tokens</Description>
+        <div className="flex msm:flex-col sm:flex-row sm:justify-around mt-30 msm: items-center">
           <Button title={'Create Sale'} onClick={()=> {window.alert("adsf")}} />
           <Button title={'Pre Sales'}/>
           <Button title={'Docs'}/>
         </div>
-        <div className="mt-90 flex justify-around">
+        <div className="mt-90 flex msm:flex-col sm:flex-row sm:justify-around msm: items-center">
           <Card title="333" description="Sales Made"/>
           <Card title="$40M" description="Liquidity Raised"/>
           <Card title="103" description="Tokens Created"/>

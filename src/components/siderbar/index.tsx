@@ -53,7 +53,7 @@ const Siderbar = ({list, showMenu, setShowMenu}: Props) => {
 
   const Menu = () => {
     return (
-      <div className='w-full min-h-screen msm:z-9 sm:z-0'>
+      <div className='w-full h-full msm:z-9 sm:z-0'>
         {
           list.map((item, index) => { 
             const Icon = IconSVG[`${item.icon}`];
@@ -86,7 +86,7 @@ const Siderbar = ({list, showMenu, setShowMenu}: Props) => {
   }
 
   return (<>
-    <div className={`border-r-4 border-gray-300 ${isCollepse && `msm:hidden`} sm:block`}>
+    <div className={`${isCollepse && `msm:hidden`} sm:block`}>
       <div className={showMenu?"p-10 flex justify-end text-gray-600": "text-center p-10 text-gray-600"}><button onClick={() => {setShowMenu(!showMenu)}}><FontAwesomeIcon icon={showMenu?faAngleDoubleLeft:faAngleDoubleRight} size="2x" /></button></div>
       <Menu />
     </div>

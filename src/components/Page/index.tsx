@@ -5,11 +5,7 @@ import { colorVariants } from './theme'
 import { PageProps } from './type'
 
 const StyleDiv = styled.div<PageProps>`
-  border-top-width: 40px;
-  border-right-width: 45px;
-  border-left-width: 45px;
   border-color: #f0f0f0;
-  padding: 50px 50px 0 50px;
   ${space}
   ${layout}
   ${variant({
@@ -23,7 +19,7 @@ export const Page = (props: PageProps) => {
   const colors = color;
   return (
     <StyleDiv 
-      className="w-screen"
+      className="w-full sm:border-t-50 sm:border-l-45 sm:border-r-45 sm:px-50 msm:px-20 msm:pt-30 sm:pt-50"
       {...rest}
       color = {colors}
     >

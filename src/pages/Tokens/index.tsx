@@ -4,21 +4,19 @@ import styled from 'styled-components'
 import { Currencies, CurrencyProps } from 'components/Currencies'
 
 const SearchBar = styled.div`
-  margin-bottom: 100px;
+  
 `
 const Text = styled.div`
   cursor: pointer;
   border-width: 1px;
-  width: 100px;
   text-align: center;
-  border-radius: 30px;
+  border-radius: 10px;
   padding : 5px;
   font-weight: 500;
   &:active {
     border-color: blue;
   }
 `
-
 
 
 const Tokens = () => {
@@ -34,13 +32,15 @@ const Tokens = () => {
   const CurrenciesHeader = styled.div``
 
   return (
-    <Page color="transparent">
-      <SearchBar className="flex items-center justify-around">
-        <input type="text" name="searchbar" id="searchbar" placeholder="Search by token address" className="outline-none p-10 border-2 w-900 rounded-xl border-gray-900"/>
-          <Text onClick={() => setAll(true)}>All</Text>
-          <Text onClick={() => setAll(false)}>My Lock</Text>
+    <Page color="transparent" >
+      <SearchBar className="flex msm:flex-col sm:flex-row sm:items-center justify-around sm: mb-100 msm:mb-50">
+          <div className="msm:min-w-min sm:w-900 sm:mb-10 msm:mb-5"><input type="text" name="searchbar" id="searchbar" placeholder="Search by token address" className="outline-none p-10 border-2 w-full rounded-xl border-gray-900"/></div>
+          <div className="flex msm:justify-between sm:justify-around items-center flex-grow">
+            <Text onClick={() => setAll(true)} className="msm:w-80 md:120">All</Text>
+            <Text onClick={() => setAll(false)} className="msm:w-80 md:120">My Lock</Text>
+          </div>
       </SearchBar>
-      <CurrenciesHeader className="flex justify-between items-center mb-30">
+      <CurrenciesHeader className="msm:hidden sm:block flex justify-between items-center mb-30">
         <div className="w-100 text-center font-bold">TOKEN</div>
         <div className="text-center font-bold">Amount</div>
         <div className="font-bold">VIEW</div>
