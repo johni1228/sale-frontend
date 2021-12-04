@@ -28,7 +28,7 @@ interface Props {
 const Siderbar = ({list, showMenu, setShowMenu}: Props) => {
 
   const isCollepse = useAppSelector((state)=> state.collepse.value)
-  const [isPushed, setPushed] = useState(list.map(_ => false));
+  const [isSelected, setSelected] = useState(list.map(_ => false));
 
   let history = useHistory();
   
@@ -38,15 +38,18 @@ const Siderbar = ({list, showMenu, setShowMenu}: Props) => {
     }
   }
   
-  const handleLink = (item: Item) => {
+  const handleLink = (item: Item, index: number) => {
+    const newIsSelected = list.map(_ => false)
+    newIsSelected[index] = !isSelected[index]
+    setSelected(newIsSelected);
     return history.push(`${item.href}`)
   }
   
   const handleSub = (index: number) => {
     setShowMenu(true)
-    const newIsPushed = list.map(_ => false)
-    newIsPushed[index] = !isPushed[index]
-    setPushed(newIsPushed);
+    const newIsSelected = list.map(_ => false)
+    newIsSelected[index] = !isSelected[index]
+    setSelected(newIsSelected);
   }
 
   const IconSVG = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
@@ -60,23 +63,23 @@ const Siderbar = ({list, showMenu, setShowMenu}: Props) => {
             if(item.items)
               return(<div>
                 <div 
-                  className={"text-black py-10 px-20 cursor-pointer flex justify-between items-center hover:text-gray-900"} 
+                  className={`text-black py-10 px-20 cursor-pointer flex justify-between items-center hover:text-red-500 ${isSelected[index]? `bg-red-100 border-r-4 border-red-500`: ``}`} 
                   onClick={() => handleSub(index)}>
                   <div className="flex justify-start items-center">
                     <Icon width="20px"/>
-                    { showMenu && <Link to="" className={showMenu?"m-10 text-15":"text-15"}>{showMenu?item.label: ''}</Link>}
+                    { showMenu && <Link to="" className={"m-10 text-15"}>{showMenu?item.label: ''}</Link>}
                   </div>
-                  {showMenu && (isPushed[index] ? <ArrowDownIcon /> : <ArrowUpIcon /> )}
+                  {showMenu && (isSelected[index] ? <ArrowDownIcon /> : <ArrowUpIcon /> )}
                 </div>
-                {showMenu && isPushed[index] && <MenuDetail detail={item.items} href={item.href}/>}
+                {showMenu && isSelected[index] && <MenuDetail detail={item.items} href={item.href}/>}
               </div>)
             else return (
               <div 
-                  className={"text-black py-10 px-20 cursor-pointer flex justify-between items-center hover:text-gray-900"} 
-                  onClick={() => {handleLink(item)}}>
+                  className={`text-black py-10 px-20 cursor-pointer flex justify-between items-center hover:text-red-500 ${isSelected[index]? `bg-red-100 border-r-4 border-red-500`: ``}`} 
+                  onClick={() => {handleLink(item, index)}}>
                   <div className="flex justify-start items-center">
                     <Icon width="20px"/>
-                    { showMenu && <Link to="" className={showMenu?"m-10 text-15":"text-15"}>{showMenu?item.label: ''}</Link>}
+                    { showMenu && <Link to="" className={`m-10 text-15`}>{showMenu?item.label: ''}</Link>}
                   </div>
               </div>
             )
