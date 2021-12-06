@@ -28,7 +28,7 @@ export const SaleCard = (props: SaleCardProps) => {
   `
 
   return (
-    <StyleDiv sale={sale} p="15px 20px">
+    <StyleDiv sale={sale} p="15px 20px" className="rounded-3xl">
       <div className="flex justify-start items-center">
         <SaleIcon />
         <p className="font-bold text-25 ml-10">{sale.name}</p>
@@ -55,10 +55,10 @@ export const SaleCard = (props: SaleCardProps) => {
         </div>
         <div className="flex justify-between items-center mt-10">
           <p >Start: <code className="font-bold">{sale.startTime ? sale.startTime.toString() : sale.endTime.toString()}</code></p>
-          <div className="text-center px-10 py-5 border-2 border-black font-bold">Research</div>
+          <div className="text-center px-10 py-5 bg-red-200 font-bold cursor-pointer rounded-3xl text-red-600 ">Research</div>
         </div>
       </div>
-      <Mark className="absolute top-0 right-0 px-35 py-4">{sale.status}</Mark>
+      <Mark className="absolute top-0 right-0 px-35 py-4 rounded-tr-full">{sale.status}</Mark>
     </StyleDiv>
   )
 }
