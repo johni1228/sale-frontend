@@ -1,9 +1,10 @@
 import React from 'react'
+import { Page } from 'components/Page'
 
 export const SocialLink = () => {
   return (
-    <div>
+    <Page color="transparent" className="min-h-screen">
       Social Link page
-    </div>
+    </Page>
   )
 }

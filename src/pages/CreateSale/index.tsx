@@ -31,6 +31,9 @@ const CreateSale = () => {
   const router = useHistory();
   const [isLoading, setLoading] = useState<boolean>(false)
   const [currency, setCurrency] = useState<CurrencyProps>(null);
+  const handleNext = () => {
+    return router.push('/launchpad/createSale/sociallink')
+  }
   const form = useFormik({
     initialValues: {
       address: '',
@@ -135,7 +138,7 @@ const CreateSale = () => {
             </div>
             <Input label="Total Team Tokens" value={form.values.firstRelease} onChange={form.handleChange} className="mb-20"/>
             <div className="flex lg:justify-end msm:justify-center">
-              <div className="bg-yellow-400 text-center py-5 text-20 font-bold px-20 min-w-min cursor-pointer hover:shadow-xl">NEXT</div>
+              <div className="bg-yellow-400 text-center py-5 text-20 font-bold px-20 min-w-min cursor-pointer hover:shadow-xl" onClick={handleNext}>NEXT</div>
             </div>
           </div>
         </div>
