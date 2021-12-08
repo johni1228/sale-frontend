@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from "react-router-dom"
 import { SaleIcon } from 'components/Svg/intex';
 import { layout, space, SpaceProps, TypographyProps } from 'styled-system';
 import { SaleProps } from './type'
@@ -21,6 +22,7 @@ const StyleDiv = styled.div<SaleCardProps>`
 `
 
 export const SaleCard = (props: SaleCardProps) => {
+  const history = useHistory();
   const {sale, ...rest } = props;
   console.log(sale.status)
   const Mark = styled.div`
@@ -55,7 +57,7 @@ export const SaleCard = (props: SaleCardProps) => {
         </div>
         <div className="flex justify-between items-center mt-10">
           <p >Start: <code className="font-bold">{sale.startTime ? sale.startTime.toString() : sale.endTime.toString()}</code></p>
-          <div className="text-center px-10 py-5 bg-red-200 font-bold cursor-pointer rounded-3xl text-red-600 ">Research</div>
+          <div className="text-center px-10 py-5 bg-red-200 font-bold cursor-pointer rounded-3xl text-red-600 " onClick={()=>{history.push('/launchpad/presale/detail')}}>Research</div>
         </div>
       </div>
       <Mark className="absolute top-0 right-0 px-35 py-4 rounded-tr-full">{sale.status}</Mark>

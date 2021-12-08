@@ -23,7 +23,7 @@ export const SocialLink = () => {
   const [isLoading, setLoading] = useState<boolean>(false)
   const [currency, setCurrency] = useState<CurrencyProps>(null);
   const handleNext = () => {
-    return router.push('/launchpad/createSale/sociallink')
+    return router.push('/launchpad/createSale/showdetail')
   }
   const handleBack = () => {
     return router.goBack()
